@@ -20,7 +20,7 @@ public class cFil implements Runnable {
         System.out.println("Iniciant execució procés " + aNomFil);
         try {
             for (int vComptador = 0; vComptador < 10; vComptador ++) {
-                Thread.sleep(aTemporitzacio);
+                Thread.sleep(2000);
                 System.out.println("Despertant aturada " + vComptador + " procès " + aNomFil);
             }
         }
