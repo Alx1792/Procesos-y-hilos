@@ -2,7 +2,7 @@ package UF2;
 
 public class cFilPrincipal {
 
-  public static void main (String [] pArguments) {
+  public static void main (String [] pArguments) throws InterruptedException {
       System.out.println ("Fil principal iniciat.");
       System.out.println ("Fil secundari iniciat.");
       cFil vObjecteFil = new cFil ("#1");
@@ -11,6 +11,7 @@ public class cFilPrincipal {
       Thread vFil = new Thread (vObjecteFil);
     //alternativa: vObjecteFil
       vFil.start ();
+      vFil.join();
       System.out.println ("Iniciant execució procés principal");
 
       try {
