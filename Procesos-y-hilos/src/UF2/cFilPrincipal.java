@@ -1,17 +1,28 @@
 package UF2;
 
+import java.util.Scanner;
+
 public class cFilPrincipal {
 
   public static void main (String [] pArguments) {
-      System.out.println ("Fil principal iniciat.");
-      System.out.println ("Fil secundari iniciat.");
-      cFil vObjecteFil = new cFil ("#1");
+      Scanner scan =new Scanner(System.in);
+      System.out.println("Quants fils vols crear");
+      int fils= scan.nextInt();
+      int primer=100;
+      int afegir=100;
+      System.out.println("Iniciant fil principal");
 
-    //alternativa: innecessari
-      Thread vFil = new Thread (vObjecteFil);
-    //alternativa: vObjecteFil
-      vFil.start ();
-      System.out.println ("Iniciant execució procés principal");
+      for(int i=0;i<fils;i++){
+          cFil vObjecteFil = new cFil ("#"+i);
+          vObjecteFil.sTemporitzacio(primer+(i*afegir)); //No se si aixi ho estic fent be
+          Thread vFil=new Thread(vObjecteFil);
+          vFil.start();
+          System.out.println("Fil secundari iniciat "+ vObjecteFil.gNomFil());
+      }
+
+
+
+
 
       try {
           for (int vComptador = 0; vComptador < 10; vComptador ++) {
