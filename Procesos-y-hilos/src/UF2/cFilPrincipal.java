@@ -13,7 +13,7 @@ public class cFilPrincipal {
       System.out.println("Iniciant fil principal");
 
       for(int i=0;i<fils;i++){
-          cFil vObjecteFil = new cFil ("#"+i);
+          cFil vObjecteFil = new cFil ("#"+(i+1));//Sino quede feo
           vObjecteFil.sTemporitzacio(primer+(i*afegir)); //No se si aixi ho estic fent be
           Thread vFil=new Thread(vObjecteFil);
           vFil.start();
